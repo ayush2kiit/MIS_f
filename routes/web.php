@@ -8,14 +8,15 @@ use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\TrashController;
 
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
+// Route::get('/', function () {
+//     return Inertia::render('Welcome', [
+//         'canLogin' => Route::has('login'),
+//         'canRegister' => Route::has('register'),
+//         'laravelVersion' => Application::VERSION,
+//         'phpVersion' => PHP_VERSION,
+//     ]);
+// });
+
 
 Route::middleware([
     'auth:sanctum',
@@ -33,10 +34,12 @@ Route::get('/customer',function(){
     print_r($data->toArray());
 
 });
+
+Route::get('/','App\Http\Controllers\UploadController@showUploadForm');
 Route::post('/students', 'StudentController@store')->name('store_student');
 
 Route::get('/students/view',[RegistrationController::class,'view'])->name('students.view');
-Route::get('/register',[RegistrationController::class,'index']);
+Route::get('/register',[RegistrationController::class,'index'])->name('register');
 Route::post('/register',[RegistrationController::class,'store']);
 Route::get('/student/delete/{adm_no}',[RegistrationController::class,'delete'])->name('customer.delete');
 
@@ -47,4 +50,8 @@ Route::post('/upload', 'App\Http\Controllers\UploadController@upload')->name('up
 Route::get('/bin', [TrashController::class, 'view'])->name('bin.view');
 
 Route::get('/bin/{adm_no}',[TrashController::class,'move_to_database']);
+
+
+
+
 

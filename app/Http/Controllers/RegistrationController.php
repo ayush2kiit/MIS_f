@@ -104,8 +104,8 @@ class RegistrationController extends Controller
     }
 
     if (!empty($start_date) || !empty($end_date)) {
-        $start_date = !empty($start_date) ? $start_date : 1900-01-01;
-        $end_date = !empty($end_date) ? $end_date : 2050-12-12;
+        $start_date = !empty($start_date) ? $start_date : '1900-01-01';
+        $end_date = !empty($end_date) ? $end_date : '2050-12-12';
 
         $query->whereBetween('date_of_result', [$start_date, $end_date]);
     }

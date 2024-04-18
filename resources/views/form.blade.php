@@ -149,13 +149,29 @@
 </div>
 
 
-        <button class="btn btn-primary"> submit</button>
+        <button class="btn btn-primary" id="submit"> submit</button>
 
 
     </div>
 
 </form>
 
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Listen for click on the Preview button
+    
+
+
+    document.getElementById('submit').addEventListener('click', function() {
+        // Redirect to another route
+        window.location.href = "{{ route('students.view') }}";
+    });
+
+    //
+});
+</script>
 
       
    

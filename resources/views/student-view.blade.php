@@ -41,12 +41,12 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="start_ogpa">Start Overall GPA</label>
+                    <label for="start_ogpa">Start OGPA</label>
                     <input type="number" name="start_ogpa" id="start_ogpa" class="form-control" placeholder="Start overall GPA" value="{{$start_ogpa}}" step="0.01">
                 </div>
 
                 <div class="form-group">
-                     <label for="end_ogpa">End Overall GPA</label>
+                     <label for="end_ogpa">End OGPA</label>
                      <input type="number" name="end_ogpa" id="end_ogpa" class="form-control" placeholder="End overall GPA" value="{{$end_ogpa}}" step="0.01">
                 </div>
 
@@ -62,12 +62,12 @@
                 </div>
 
                 <div class="form-group">
-                        <label for="start_date">Start Date</label>
+                        <label for="start_date"> Start Result Date</label>
                         <input type="date" name="start_date" id="start_date" class="form-control" value="{{$start_date}}">
                 </div>
 
                  <div class="form-group">
-                        <label for="end_date">End Date</label>
+                        <label for="end_date">End Result Date</label>
                         <input type="date" name="end_date" id="end_date" class="form-control" value="{{$end_date}}">
                 </div>
 
